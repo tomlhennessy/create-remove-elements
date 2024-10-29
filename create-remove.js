@@ -36,18 +36,24 @@ add.addEventListener("click", async () => {
 const removeFirst = document.getElementById("remove-first");
 removeFirst.addEventListener("click", () => {
     /*-------------------- Select the first dog card --------------------- */
-    // Your code here
+    const galleryList = document.querySelector(".gallery > ul");
+    const firstDogCard = galleryList.querySelector("li");
 
     /*-------------------- Remove the first dog card --------------------- */
-    // Your code here
+    if (firstDogCard) {
+        galleryList.removeChild(firstDogCard);
+    }
 });
 
 /************************** REMOVE LAST DOG BUTTON ***************************/
 const removeLast = document.getElementById("remove-last");
 removeLast.addEventListener("click", () => {
     /*-------------------- Select the last dog card ----------------------- */
-    // Your code here
+    const galleryList = document.querySelector(".gallery > ul");
+    const lastDogCard = galleryList.querySelector("li:last-child");
 
     /*-------------------- Remove the last dog card ----------------------- */
-    // Your code here
+    if (lastDogCard) {
+        galleryList.removeChild(lastDogCard);
+    }
 });
