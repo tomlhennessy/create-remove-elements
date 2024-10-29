@@ -8,15 +8,24 @@ add.addEventListener("click", async () => {
         const url = data.message; // URL of new dog image
 
         /*--------------- Get breed (Hint: Parse from URL) ---------------- */
-        // Your code here
+        // get breed name fromt the URL (assuming its the part after "/breeds")
+        const breed = url.split("/")[4];
 
         /*------------ Create new dog card with the url above ------------- */
-        /* (use the HTML structure for the current dog image in the index.html
-            file to create a new image with the url) */
-        // Your code here
+        // create new list item <li> to hold the dog card
+        const newDogCard = document.createElement("li");
+
+        // set up the structure of the dog card
+        newDogCard.innerHTML = `
+            <figure>
+                <img src="${url}" alt="${breed}" />
+                <figcaption>${breed}</figcaption?
+            </figure>
+        `;
 
         /* Add the new dog card as a child to the ul in the .gallery element */
-        // Your code here
+        const galleryList = document.querySelector(".gallery > ul");
+        galleryList.appendChild(newDogCard);
 
     } catch (e) {
         console.log("Couldn't fetch dog :(")
